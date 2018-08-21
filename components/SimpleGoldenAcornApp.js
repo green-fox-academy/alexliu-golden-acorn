@@ -9,11 +9,10 @@ class SimpleGoldenAcornApp extends React.Component { //eslint-disable-line
   }
 
   componentDidMount() {
-    document.addEventListener('keyup', this.handleEnterKey());
+    document.addEventListener('keydown', this.handleEnterKey());
   }
 
   handleEnterKey() {
-    
     return (e) => {
       if (e.keyCode === 38) {
         this.buy()();
