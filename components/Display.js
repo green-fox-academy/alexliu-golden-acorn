@@ -1,7 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Display = props => (
-  <p>{props.number}</p>
-);
+function Display(props) {
+  const { children } = props;
+  return <p>{children}</p>;
+}
+
+Display.defaultProps = {
+  children: 0,
+};
+
+Display.propTypes = {
+  children: PropTypes.number,
+}
 
 export default Display;

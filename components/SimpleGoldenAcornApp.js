@@ -8,22 +8,48 @@ class SimpleGoldenAcornApp extends React.Component { //eslint-disable-line
     this.state = { number: 0 };
   }
 
-  buy () { //eslint-disable-line
-    this.setState({ number: this.state.number + 1 });
+  componentDidMount() {
+    document.addEventListener('keyup', this.handleEnterKey());
   }
-  
+
+  handleEnterKey() {
+    
+    return (e) => {
+      if (e.keyCode === 38) {
+        this.buy()();
+      } else if (e.keyCode === 40) {
+        this.eat()();
+      }
+    };
+  }
+
+  buy() { // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
+    const { number } = this.state;
+    return () => {
+      this.setState({
+        number: number + 1,
+      });
+    };
+  }
+
   eat () { //eslint-disable-line
-    if (this.state.number > 0) {
-      this.setState({ number: this.state.number - 1 });
-    }
+    const { number } = this.state;
+    return () => {
+      if (number > 0) {
+        this.setState({
+          number: number - 1,
+        });
+      }
+    };
   }
 
   render() {
+    const { number } = this.state;
     return (
       <div>
-        <Button text="Buy one" onclick={this.buy.bind(this)} />
-        <Display number={this.state.number} />
-        <Button text="Eat one" onclick={this.eat.bind(this)} />
+        <Button name="Buy one" onClick={this.buy()} />
+        <Display>{number}</Display>
+        <Button name="Eat one" onClick={this.eat()} />
       </div>
     );
   }
