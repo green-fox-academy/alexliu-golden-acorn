@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Display(props) {
-  const { children } = props; // children is the whole things between <Display> </Display>
-  return <p>{children}</p>;
+  const { amount } = props; // children is the whole things between <Display> </Display>
+  return <p>{ amount }</p>;
 }
 
-Display.defaultProps = {
-  children: 0,
-};
+// Display.defaultProps = {
+//   amount: 0,
+// };
 
 Display.propTypes = {
-  children: PropTypes.number,
+  amount: PropTypes.number.isRequired,
 };
 
 export default Display;

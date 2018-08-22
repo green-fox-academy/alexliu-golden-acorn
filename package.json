@@ -23,7 +23,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -35,7 +36,6 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "redux-devtools-extension": "^2.13.5",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
