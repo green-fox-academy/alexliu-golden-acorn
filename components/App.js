@@ -1,14 +1,22 @@
-import React from 'react';
-import BuyAcorn from '../src/containers/BuyAcorn';
-import EatAcorn from '../src/containers/EatAcorn';
-import DisplayAcorn from '../src/containers/DisplayAcorn';
+import React, { Component } from 'react';
+import Router from './Router';
 
-const App = props => (
-  <main>
-    <BuyAcorn />
-    <DisplayAcorn />
-    <EatAcorn />
-  </main>
-);
+const styles = {
+  div: {
+    backgroundColor: 'tomato',
+  },
+};
+
+const App = () => {
+  return (
+    <React.Fragment>
+      <div style={styles.div} className="maincontainer">
+        <div className="App">
+          <Router />
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default App;

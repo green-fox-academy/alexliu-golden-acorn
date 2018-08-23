@@ -1,11 +1,12 @@
 import React from 'react';
-import Button from './Button';
-import Display from './Display';
+import Navlink from '../Navlink';
+import Button from '../Button';
+import Display from '../Display';
 
 class SimpleGoldenAcornApp extends React.Component { //eslint-disable-line
   constructor(props) {
     super(props);
-    this.state = { number: 0 };
+    this.state = { amount: 0 };
   }
 
   componentDidMount() {
@@ -23,31 +24,33 @@ class SimpleGoldenAcornApp extends React.Component { //eslint-disable-line
   }
 
   buy() { // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
-    const { number } = this.state;
+    const { amount } = this.state;
     return () => {
       this.setState({
-        number: number + 1,
+        amount: amount + 1,
       });
     };
   }
 
   eat () { //eslint-disable-line
-    const { number } = this.state;
+    const { amount } = this.state;
     return () => {
-      if (number > 0) {
+      if (amount > 0) {
         this.setState({
-          number: number - 1,
+          amount: amount - 1,
         });
       }
     };
   }
 
   render() {
-    const { number } = this.state;
+    const { amount } = this.state;
     return (
       <div>
+        <Navlink />
+        <h1>Golden Acorn Application with states</h1>
         <Button name="Buy one" onClick={this.buy()} />
-        <Display>{number}</Display>
+        <Display amount={amount} />
         <Button name="Eat one" onClick={this.eat()} />
       </div>
     );

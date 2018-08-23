@@ -8,12 +8,12 @@ export const eatAcorn = amount => ({
   amount,
 });
 
-export const arrowUp = amount => ({
-  type: 'ARROW_UP',
-  amount,
-});
+// export const arrowUp = amount => ({
+//   type: 'ARROW_UP',
+//   amount,
+// });
 
-export const arrowDown = amount => ({
-  type: 'ARROW_DOWN',
-  amount,
-});
+// export const arrowDown = amount => ({
+//   type: 'ARROW_DOWN',
+//   amount,
+// });
